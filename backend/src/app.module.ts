@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { getEnvPath } from './utils/helpers';
+import { TodoModule } from './modules/todo/todo.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { getEnvPath } from './utils/helpers';
       // expandVariables: true,
       envFilePath: getEnvPath(`${__dirname}/config/envs`),
     }),
+    TodoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
