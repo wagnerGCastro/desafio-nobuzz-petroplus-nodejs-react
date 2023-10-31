@@ -36,6 +36,9 @@ lerna-debug.log*
 
 # others
 .env.production
+api.test.http
+doc.txt
+
 
 # docker data
 /.docker/data/pgadmin/*
