@@ -142,3 +142,18 @@ yarn-error.log*
 
 # txt
 readme.txt
+
+
+# docker data
+/backend/.docker/data/pgadmin/*
+!/backend//.docker/data/pgadmin/.gitkeep
+
+/backend//.docker/data/postgres/*
+!/backend//.docker/data/postgres/.gitkeep
+
+# docker logs
+/backend//.docker/logs/postgres/*
+!/backend//.docker/logs/postgres/.gitkeep
+
+/backend//.docker/logs/pgadmin/*
+!/backend//.docker/logs/pgadmin/.gitkeep

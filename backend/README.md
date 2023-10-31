@@ -58,6 +58,69 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+# Run application in Docker
+
+Run the commands::
+
+````bash
+1- $ docker-compose -f docker-compose.dev.yml build backend postgres pgadmin
+2- $ docker-compose -f docker-compose.dev.yml up backend
+
+- run build and upload containers
+$ docker-compose -f docker-compose.dev.yml  up -d --build backend
+
+-- Access container
+$ docker-compose -f docker-compose.dev.yml --compatibility exec backend bash
+
+
+# Comands Nest.js (NEST CLI)
+
+---
+
+helper
+
+```bash
+  $ npx nest -h
+````
+
+create generate decorator
+
+```bash
+  $ npx nest g decorator /app/role
+```
+
+create generate guard
+
+```bash
+  $ npx nest g guard /app/role
+```
+
+create generate module
+
+```bash
+  $ npx nest g module auth
+```
+
+create generate controler
+
+```bash
+  $ npx nest g controller product
+```
+
+create generate service
+
+```bash
+  $ npx nest g service product
+```
+
+# Comands NPM
+
+```bash
+  $ npm cache clean --force
+  $ npm install --force
+  $ npm install --legacy-peer-deps
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
