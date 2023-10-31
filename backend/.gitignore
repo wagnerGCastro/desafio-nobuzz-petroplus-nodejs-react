@@ -36,3 +36,18 @@ lerna-debug.log*
 
 # others
 .env.production
+
+# docker data
+/.docker/data/pgadmin/*
+!/.docker/data/pgadmin/.gitkeep
+
+/.docker/data/postgres/*
+!/.docker/data/postgres/.gitkeep
+
+# docker logs
+/.docker/logs/postgres/*
+!/.docker/logs/postgres/.gitkeep
+
+/.docker/logs/pgadmin/*
+!/.docker/logs/pgadmin/.gitkeep
+
