@@ -1,4 +1,10 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { CreateTodoDto } from './create-todo.dto';
+import { IsNotEmpty } from 'class-validator';
 
-export class UpdateTodoDto extends PartialType(CreateTodoDto) {}
+import { CreateTodoDto } from './create-todo.dto';
+import { IsDoneEnum } from '../entities/todo.entity';
+
+export class UpdateTodoDto extends PartialType(CreateTodoDto) {
+  @IsNotEmpty()
+  isDone: IsDoneEnum;
+}

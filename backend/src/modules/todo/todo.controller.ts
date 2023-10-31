@@ -19,17 +19,17 @@ export class TodoController {
   }
 
   @Get(':id')
-  async show(@Param('id') id: string) {
+  async show(@Param('id') id: number) {
     return this.todoService.findOneOrFail(+id);
   }
 
   @Patch(':id')
-  async update(@Param('id') id: string, @Body() updateTodoDto: UpdateTodoDto) {
+  async update(@Param('id') id: number, @Body() updateTodoDto: UpdateTodoDto) {
     return this.todoService.update(+id, updateTodoDto);
   }
 
   @Delete(':id')
-  destroy(@Param('id') id: string) {
+  destroy(@Param('id') id: number) {
     return this.todoService.deleteById(+id);
   }
 }
