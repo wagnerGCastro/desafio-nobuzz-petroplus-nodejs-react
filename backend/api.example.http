@@ -2,3 +2,38 @@
 
 GET http://localhost:3071/
 Content-Type: application/json
+
+##########################################################################
+###### TODO ##############################################################
+
+###### index
+GET http://localhost:3071/api/v1/todos
+Content-Type: application/json
+
+
+###### store
+POST http://localhost:3071/api/v1/todos
+Content-Type: application/json
+
+{
+  "name": "task-1",
+  "description": "Lorem Ipsum is simply dummy text of the"
+}
+
+###### show
+GET http://localhost:3071/api/v1/todos/1
+Content-Type: application/json
+
+###### update
+PATCH  http://localhost:3071/api/v1/todos/1
+Content-Type: application/json
+
+{
+  "name": "task-1",
+  "description": "Update tas-1",
+  "isDone": 1,
+  "completedDate": "2023-11-01T03:47:35.802Z"
+}
+
+###### destroy
+DELETE  http://localhost:3071/api/v1/todos/1
