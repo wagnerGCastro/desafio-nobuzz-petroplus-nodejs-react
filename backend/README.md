@@ -62,16 +62,16 @@ $ npm run test:cov
 
 Run the commands::
 
-````bash
+```bash
 1- $ docker-compose -f docker-compose.dev.yml build backend postgres pgadmin
 2- $ docker-compose -f docker-compose.dev.yml up backend
 
 - run build and upload containers
 $ docker-compose -f docker-compose.dev.yml  up -d --build backend
 
--- Access container
+- Access container
 $ docker-compose -f docker-compose.dev.yml --compatibility exec backend bash
-
+```
 
 # Comands Nest.js (NEST CLI)
 
@@ -81,7 +81,7 @@ helper
 
 ```bash
   $ npx nest -h
-````
+```
 
 create generate decorator
 

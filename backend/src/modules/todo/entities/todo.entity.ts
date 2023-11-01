@@ -16,7 +16,7 @@ export class TodoEntity {
   @Column({ name: 'is_done', type: 'enum', enum: [0, 1], default: 0 })
   isDone: IsDoneEnum;
 
-  @Column({ name: 'completed_date', type: 'datetime', nullable: true })
+  @Column({ name: 'completed_date', type: 'timestamp', nullable: true })
   completedDate: string;
 
   @CreateDateColumn({ name: 'created_at' })
