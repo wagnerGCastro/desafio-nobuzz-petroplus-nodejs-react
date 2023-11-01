@@ -24,7 +24,7 @@ export class UserEntity {
   @Column({ unique: true })
   email: string;
 
-  @Column({ select: false })
+  @Column()
   password: string;
 
   @CreateDateColumn({ name: 'created_at' })

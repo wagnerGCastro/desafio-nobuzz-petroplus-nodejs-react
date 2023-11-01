@@ -4,6 +4,18 @@ GET http://localhost:3071/
 Content-Type: application/json
 
 ################################################################################
+###### AUTH #######################################################################
+
+###### login
+POST http://localhost:3071/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "wagner.castro@teste.com",
+  "password": "@123Alfa"
+}
+
+################################################################################
 ###### USER #######################################################################
 
 ###### index
@@ -16,7 +28,7 @@ Content-Type: application/json
 {
   "firstName": "Wagner",
   "lastName": "Castro",
-  "email": "wagner.castro@teste.com",
+  "email": "wagner3.castro@teste.com",
   "password": "@123Alfa"
 }
 

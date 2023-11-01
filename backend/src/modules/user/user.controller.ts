@@ -9,8 +9,8 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Post()
-  async create(@Body() createUserDto: CreateUserDto) {
-    return this.userService.create(createUserDto);
+  async create(@Body() body: CreateUserDto) {
+    return this.userService.create(body);
   }
 
   @Get()
@@ -20,7 +20,8 @@ export class UserController {
 
   @Get(':id')
   async show(@Param('id') id: number) {
-    return this.userService.findOneOrFail(+id);
+    const user = await this.userService.findOneOrFail({ id });
+    return user;
   }
 
   @Patch(':id')
