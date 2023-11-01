@@ -24,22 +24,25 @@ export class UserService {
     });
   }
 
-  async findOneOrFail(id: number) {
+  async findOneOrFail({ id, email }: { id?: number; email?: string }) {
     try {
-      return await this.userRepository.findOneOrFail({ where: { id } });
+      const conditional = { id, email };
+      return await this.userRepository.findOneOrFail({
+        where: conditional,
+      });
     } catch (error) {
       throw new NotFoundException(error.message);
     }
   }
 
   async update(id: number, data: UpdateUserDto) {
-    const user = await this.findOneOrFail(id);
+    const user = await this.findOneOrFail({ id });
     this.userRepository.merge(user, data);
     return await this.userRepository.save(user);
   }
 
   async remove(id: number) {
-    await this.findOneOrFail(id);
+    await this.findOneOrFail({ id });
     this.userRepository.softDelete({ id });
   }
 }

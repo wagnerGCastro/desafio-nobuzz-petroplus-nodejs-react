@@ -9,6 +9,7 @@ import { AppService } from './app.service';
 import { getEnvPath } from './utils/helpers';
 import { TodoModule } from './modules/todo/todo.module';
 import { UserModule } from './modules/user/user.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 dotenv.config({ path: path.join(__dirname, 'config', 'envs', `.env.${process.env.NODE_ENV}`) });
 
@@ -33,6 +34,7 @@ dotenv.config({ path: path.join(__dirname, 'config', 'envs', `.env.${process.env
     }),
     TodoModule,
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
