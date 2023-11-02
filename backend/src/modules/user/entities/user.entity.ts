@@ -10,6 +10,8 @@ import {
 
 import { hashSync } from 'bcrypt';
 
+export type RoleEnum = 'admin' | 'client';
+
 @Entity({ name: 'users' })
 export class UserEntity {
   @PrimaryGeneratedColumn('increment')
@@ -26,6 +28,9 @@ export class UserEntity {
 
   @Column()
   password: string;
+
+  @Column({ name: 'role', type: 'enum', enum: ['admin', 'client'], default: null })
+  role: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: string;
