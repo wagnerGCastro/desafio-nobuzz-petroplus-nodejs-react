@@ -28,6 +28,7 @@ import UserLayout from 'src/layouts/UserLayout'
 import ThemeComponent from 'src/@core/theme/ThemeComponent'
 
 // ** Contexts
+import { AuthProvider } from 'src/context/AuthContext'
 import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsContext'
 
 // ** Styled Components
@@ -93,21 +94,22 @@ const App = (props: ExtendedAppProps) => {
         <meta name='keywords' content='tarefas' />
         <meta name='viewport' content='initial-scale=1, width=device-width' />
       </Head>
-
-      <SettingsProvider {...(setConfig ? { pageSettings: setConfig() } : {})}>
-        <SettingsConsumer>
-          {({ settings }) => {
-            return (
-              <ThemeComponent settings={settings}>
-                {getLayout(<Component {...pageProps} />)}
-                <ReactHotToast>
-                  <Toaster position={settings.toastPosition} toastOptions={{ className: 'react-hot-toast' }} />
-                </ReactHotToast>
-              </ThemeComponent>
-            )
-          }}
-        </SettingsConsumer>
-      </SettingsProvider>
+      <AuthProvider>
+        <SettingsProvider {...(setConfig ? { pageSettings: setConfig() } : {})}>
+          <SettingsConsumer>
+            {({ settings }) => {
+              return (
+                <ThemeComponent settings={settings}>
+                  {getLayout(<Component {...pageProps} />)}
+                  <ReactHotToast>
+                    <Toaster position={settings.toastPosition} toastOptions={{ className: 'react-hot-toast' }} />
+                  </ReactHotToast>
+                </ThemeComponent>
+              )
+            }}
+          </SettingsConsumer>
+        </SettingsProvider>
+      </AuthProvider>
     </CacheProvider>
   )
 }
