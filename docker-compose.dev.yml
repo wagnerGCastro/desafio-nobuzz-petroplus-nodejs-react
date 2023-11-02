@@ -16,7 +16,7 @@ services:
     env_file:
       - ./backend/src/config/envs/.env.development
     volumes:
-      - ./backend/./:/var/www
+      - ./backend:/var/www
     ports:
       - "${APP_PORT:-3071}:3071"
     depends_on:

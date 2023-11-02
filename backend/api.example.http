@@ -15,6 +15,11 @@ Content-Type: application/json
   "password": "@123Alfa"
 }
 
+###### me
+GET http://localhost:3071/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJXYWduZXIiLCJsYXN0TmFtZSI6IkNhc3RybyIsImVtYWlsIjoid2FnbmVyLmNhc3Ryb0B0ZXN0ZS5jb20iLCJjcmVhdGVkQXQiOiIyMDIzLTExLTAxVDExOjQ1OjQ5Ljg5M1oiLCJ1cGRhdGVkQXQiOiIyMDIzLTExLTAxVDExOjQ1OjQ5Ljg5M1oifSwiaWF0IjoxNjk4ODYyMTE1LCJleHAiOjE2OTg4NjU3MTV9.Wxe65wQwoBMyKxi-qdPR1SczN0vwaLhKlE7LdCrRV9A
+
+
 ################################################################################
 ###### USER #######################################################################
 
