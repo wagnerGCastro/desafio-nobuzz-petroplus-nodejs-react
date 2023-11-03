@@ -1,8 +1,8 @@
 version: "3.9"
 
 networks:
-  # frontend:
-  #   driver: bridge
+  frontend:
+    driver: bridge
   backend:
     driver: bridge
 
@@ -10,7 +10,7 @@ services:
   ### BACKEND ##############################################
   backend:
     build:
-      context: ./backend/.docker/bin/development/backend
+      context: ./backend/.docker/bin/backend
       dockerfile: Dockerfile
     entrypoint: sh -c "npm install --loglevel=error && npm run start:dev"
     env_file:
@@ -24,6 +24,24 @@ services:
       - pgadmin
     networks:
       - backend
+      - frontend
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  ### FRONTEND ##############################################
+  frontend:
+    build:
+      context: ./frontend/.docker/bin/frontend
+      dockerfile: Dockerfile
+    entrypoint: sh -c "npm install --loglevel=error && npm run dev"
+    env_file:
+      - ./frontend/.env.development
+    volumes:
+      - ./frontend:/var/www
+    ports:
+      - "${APP_PORT:-3089}:3089"
+    networks:
+      - frontend
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
