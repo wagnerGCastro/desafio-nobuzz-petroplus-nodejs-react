@@ -5,7 +5,7 @@ Criar uma API REST e Front para gerenciar lista de tarefas
 #### Stacks tecnológicas
 
 - Node.js v18.17.0
-- Next.js
+- Next.js v13.2.4
 - Nest.js v9.6.7
 - TypeOrm
 - PostgreSQL
