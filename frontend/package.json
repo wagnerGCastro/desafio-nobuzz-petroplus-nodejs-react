@@ -30,6 +30,7 @@
     "@iconify/react": "4.1.0",
     "@mui/lab": "5.0.0-alpha.123",
     "@mui/material": "5.11.13",
+    "@mui/styles": "^5.14.16",
     "@mui/system": "5.11.13",
     "@mui/x-data-grid": "6.0.1",
     "@popperjs/core": "2.11.6",
