@@ -12,7 +12,7 @@ describe.skip('AuthController', () => {
     authControlle = module.get<AuthController>(AuthController);
   });
 
-  it('should be defined', () => {
+  it.skip('should be defined', () => {
     expect(authControlle).toBeDefined();
   });
 });

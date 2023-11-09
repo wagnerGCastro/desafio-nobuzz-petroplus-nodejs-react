@@ -13,7 +13,7 @@ Criar uma API REST e Front para gerenciar lista de tarefas
 
 #### Back-end (NestJS):
 
-Criar um cadastro da empresa com os seguintes campos:
+Criar um cadastro de tarefas com os seguintes requisitos:
 
 - Configurar um servidor NestJS para lidar com as solicitações HTTP relacionadas ao aplicativo de gerenciamento de tarefas.
 - Criar um banco de dados PostgreSQL para armazenar as informações das tarefas.
@@ -23,7 +23,7 @@ Criar um cadastro da empresa com os seguintes campos:
 
 #### Front-end (React):
 
-Criar um cadastro de veículos com os seguintes campos:
+Criar o frontend com os seguintes requisitos:
 
 - Criar uma interface de usuário para exibir uma lista de tarefas, incluindo título, descrição, status (concluída ou não), e data de criação.
 - Implementar um formulário de criação de tarefas que permita aos usuários adicionar novas tarefas.
