@@ -8,9 +8,27 @@ import { UpdateTodoDto } from './dto/update-todo.dto';
 
 // findAll
 const todoEntityList: TodoEntity[] = [
-  new TodoEntity({ id: 1, name: 'task-1', description: 'Lorem Ipsum is simply dummy text of the', isDone: 0 }),
-  new TodoEntity({ id: 2, name: 'task-2', description: 'Lorem Ipsum is simply dummy text of the', isDone: 0 }),
-  new TodoEntity({ id: 3, name: 'task-3', description: 'Lorem Ipsum is simply dummy text of the', isDone: 0 }),
+  new TodoEntity({
+    id: 1,
+    name: 'task-1',
+    description: 'Lorem Ipsum is simply dummy text of the',
+    isDone: 0,
+    completedDate: '',
+  }),
+  new TodoEntity({
+    id: 2,
+    name: 'task-2',
+    description: 'Lorem Ipsum is simply dummy text of the',
+    isDone: 0,
+    completedDate: '',
+  }),
+  new TodoEntity({
+    id: 3,
+    name: 'task-3',
+    description: 'Lorem Ipsum is simply dummy text of the',
+    isDone: 0,
+    completedDate: '',
+  }),
 ];
 
 // Create
@@ -18,7 +36,12 @@ const bodyCreated: CreateTodoDto = { name: 'new-task', description: 'Lorem Ipsum
 const newTodoEntity = new TodoEntity(bodyCreated);
 
 // Update
-const bodyUpdated: UpdateTodoDto = { name: 'task-1', description: 'Updated tsaks', isDone: 1 };
+const bodyUpdated: UpdateTodoDto = {
+  name: 'task-1',
+  description: 'Updated tsaks',
+  isDone: 1,
+  completedDate: '2023-11-01T03:47:35.802Z',
+};
 const updatedTodoEntity = new TodoEntity(bodyUpdated);
 
 describe('TodoController', () => {
