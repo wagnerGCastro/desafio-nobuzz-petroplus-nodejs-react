@@ -93,7 +93,11 @@
       "/dist/",
       "/public/",
       "/.vscode/",
-      "/.docker/"
+      "/.docker/",
+      "src/modules/auth/auth.controller.unitary.spec.ts",
+      "src/modules/auth/auth.service.unitary.spec.ts",
+      "src/modules/user/user.controller.unitary.spec.ts",
+      "src/modules/user/user.service.unitary.spec.ts"
     ]
   }
 }

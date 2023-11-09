@@ -13,15 +13,34 @@ describe('TodoService', () => {
   let todoRepository: Repository<TodoEntity>;
 
   const todoEntityList: TodoEntity[] = [
-    new TodoEntity({ id: 1, name: 'task-1', description: 'Lorem Ipsum is simply dummy text of the', isDone: 0 }),
-    new TodoEntity({ id: 2, name: 'task-2', description: 'Lorem Ipsum is simply dummy text of the', isDone: 0 }),
-    new TodoEntity({ id: 3, name: 'task-3', description: 'Lorem Ipsum is simply dummy text of the', isDone: 0 }),
+    new TodoEntity({
+      id: 1,
+      name: 'task-1',
+      description: 'Lorem Ipsum is simply dummy text of the',
+      isDone: 0,
+      completedDate: '',
+    }),
+    new TodoEntity({
+      id: 2,
+      name: 'task-2',
+      description: 'Lorem Ipsum is simply dummy text of the',
+      isDone: 0,
+      completedDate: '',
+    }),
+    new TodoEntity({
+      id: 3,
+      name: 'task-3',
+      description: 'Lorem Ipsum is simply dummy text of the',
+      isDone: 0,
+      completedDate: '',
+    }),
   ];
 
   const updatedTodoEntityItem = new TodoEntity({
     name: 'task-1',
     description: 'Lorem Ipsum is simply dummy text of the',
     isDone: 1,
+    completedDate: '2023-11-01T03:47:35.802Z',
   });
 
   beforeEach(async () => {
@@ -113,6 +132,7 @@ describe('TodoService', () => {
         name: 'task-1',
         description: 'Lorem Ipsum is simply dummy text of the',
         isDone: 1,
+        completedDate: '2023-11-01T03:47:35.802Z',
       };
 
       jest.spyOn(todoRepository, 'save').mockResolvedValueOnce(updatedTodoEntityItem);
@@ -129,6 +149,7 @@ describe('TodoService', () => {
         name: 'task-1',
         description: 'Lorem Ipsum is simply dummy text of the',
         isDone: 1,
+        completedDate: '2023-11-01T03:47:35.802Z',
       };
 
       expect(todoService.update(1, data)).rejects.toThrowError(NotFoundException);
@@ -141,6 +162,7 @@ describe('TodoService', () => {
         name: 'task-1',
         description: 'Lorem Ipsum is simply dummy text of the',
         isDone: 1,
+        completedDate: '2023-11-01T03:47:35.802Z',
       };
 
       expect(todoService.update(1, data)).rejects.toThrowError();
